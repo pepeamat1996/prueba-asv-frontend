@@ -2,15 +2,17 @@
   <h1>Mi aplicación de prueba</h1>
   <h2>Respuesta del backend</h2>
 
-  <p *ngIf="mensaje; else estado">
-    {{ mensaje }}
-  </p>
+  @if (mensaje) {
+    <p>
+      {{ mensaje }}
+    </p>
+  } @else {
+    @if (error) {
+      <p>{{ error }}</p>
+    } @else {
+      <p>Conectando con Spring Boot...</p>
+    }
+  }
 
-  <ng-template #estado>
-    <p *ngIf="error; else cargando">{{ error }}</p>
-  </ng-template>
 
-  <ng-template #cargando>
-    <p>Conectando con Spring Boot...</p>
-  </ng-template>
 </main>

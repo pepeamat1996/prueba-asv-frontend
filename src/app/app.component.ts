@@ -1,10 +1,10 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Saludo } from './services/saludo.service';
 
 @Component({
     selector: 'app-root',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
