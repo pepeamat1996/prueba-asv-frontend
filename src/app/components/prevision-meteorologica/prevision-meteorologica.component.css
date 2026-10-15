@@ -36,3 +36,19 @@ mat-form-field {
     width: 100%;
   }
 }
+
+.tarjeta-meteorologica {
+  display: block;
+  margin: 24px auto;
+  padding: 24px;
+  max-width: 400px;
+  background: white;
+  color: #263449;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+}
+
+.tarjeta-meteorologica h1 {
+  font-size: 64px;
+  color: #2784d8;
+}
