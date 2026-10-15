@@ -1,29 +1,12 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 
-import { Saludo } from './services/saludo.service';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-root',
-    imports: [],
-    templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './app.component.css'
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  private saludoService = inject(Saludo);
-
-  mensaje = '';
-  error = '';
-
-  ngOnInit(): void {
-    this.saludoService.obtenerSaludo().subscribe({
-      next: (respuesta) => {
-        this.mensaje = respuesta;
-      },
-      error: (err) => {
-        console.error(err);
-        this.error = 'No se pudo conectar con el backend.';
-      }
-    });
-  }
-}
+export class AppComponent {}

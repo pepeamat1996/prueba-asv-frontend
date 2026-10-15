@@ -1,18 +1,1 @@
-<main>
-  <h1>Mi aplicación de prueba</h1>
-  <h2>Respuesta del backend</h2>
-
-  @if (mensaje) {
-    <p>
-      {{ mensaje }}
-    </p>
-  } @else {
-    @if (error) {
-      <p>{{ error }}</p>
-    } @else {
-      <p>Conectando con Spring Boot...</p>
-    }
-  }
-
-
-</main>
+<router-outlet></router-outlet>

@@ -1,0 +1,42 @@
+<div class="contenedor">
+  <h1>PREVISIÓN METEOROLÓGICA</h1>
+
+  <div class="filtros">
+    <mat-form-field appearance="outline">
+      <mat-label>Municipio</mat-label>
+
+      <input
+        type="text"
+        matInput
+        [formControl]="formControlMunicipio"
+        [matAutocomplete]="auto"
+      />
+
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        [displayWith]="mostrarNombreMunicipio"
+        (optionSelected)="seleccionarMunicipio($event)"
+      >
+        <mat-option
+          *ngFor="let municipio of municipiosFiltrados | async"
+          [value]="municipio"
+        >
+          {{ municipio.nombre }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Unidad de temperatura</mat-label>
+
+      <mat-select [formControl]="formControlUnidTemp">
+        <mat-option
+          *ngFor="let unidad of unidadTemp"
+          [value]="unidad"
+        >
+          {{ unidad.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
